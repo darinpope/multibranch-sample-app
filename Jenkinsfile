@@ -6,9 +6,7 @@ pipeline {
   stages {
     stage('Hello') {
       steps {
-        sh '''
-          ./gradlew clean build
-        '''
+        echo "hello"
       }
     }
   }
