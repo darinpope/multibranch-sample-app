@@ -1,2 +1,2 @@
 # multibranch-sample-app
-local1
+local2
