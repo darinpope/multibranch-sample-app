@@ -1,2 +1,3 @@
 # multibranch-sample-app
 
+content
