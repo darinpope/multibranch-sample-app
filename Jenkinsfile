@@ -10,4 +10,9 @@ pipeline {
       }
     }
   }
+  post {
+    always {
+        junit 'build/reports/**/*.xml'
+    }
+  }
 }
