@@ -12,7 +12,10 @@ pipeline {
   }
   post {
     always {
-        junit '**/build/test-results/test/*.xml'
+        junit(
+          allowEmptyResults: true, 
+          testResults: '**/build/test-results/test/*.xml'
+        )
         recordIssues(
           enabledForFailure: true, aggregatingResults: true, 
           tools: [java(), checkStyle(pattern: 'checkstyle-result.xml', reportEncoding: 'UTF-8')]
