@@ -6,13 +6,13 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh './gradlew clean test'
+        sh './gradlew clean test --no-daemon'
       }
     }
   }
   post {
     always {
-        junit 'build/reports/**/*.xml'
+        junit '**/build/test-results/test/*.xml'
     }
   }
 }
