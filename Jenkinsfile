@@ -6,13 +6,13 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh './gradlew clean test'
+        sh './gradlew clean test --no-daemon'
       }
     }
   }
   post {
     always {
-        junit 'build/reports/**/*.xml'
+        junit '**/build/test-results/test/*.xml'
         recordIssues(
           enabledForFailure: true, aggregatingResults: true, 
           tools: [java(), checkStyle(pattern: 'checkstyle-result.xml', reportEncoding: 'UTF-8')]
