@@ -103,7 +103,6 @@
 
     <!-- Checks for Size Violations.                    -->
     <!-- See http://checkstyle.sourceforge.net/config_sizes.html -->
-    <module name="LineLength"/>
     <module name="MethodLength"/>
     <module name="ParameterNumber"/>
 
