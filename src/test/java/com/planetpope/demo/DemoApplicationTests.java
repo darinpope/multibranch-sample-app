@@ -16,5 +16,29 @@ class DemoApplicationTests {
 	void testFailure() {
 		assertFalse(true);
 	}
+	@Test
+	void contextLoads() {
+	}
+
+	@Test
+	void testFailure() {
+		assertFalse(true);
+	}
+	@Test
+	void contextLoads() {
+	}
+
+	@Test
+	void testFailure() {
+		assertFalse(true);
+	}
+	@Test
+	void contextLoads() {
+	}
+
+	@Test
+	void testFailure() {
+		assertFalse(true);
+	}
 
 }
