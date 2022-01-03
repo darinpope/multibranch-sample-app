@@ -9,24 +9,26 @@ pipeline {
         //sh '''
         
         echo 'testing webhooks'
-        echo 'build multibranch pipeline here.'
+        echo 'build from feature branch.'
         
         //'''
       }
     }
     stage('for the feature branch') {
-      steps {
-        when {
+      when {
           branch "feature-*"
         }
+      steps {
+        sh 'cat README.md'
       }
     }
     stage('for the PR') {
-      steps {
-        //sh '''
-        when {
+      when {
           branch "PR-*"
         }
+      steps {
+        //sh '''
+        
         echo ' this runs for the PR branch'
         
         //'''
