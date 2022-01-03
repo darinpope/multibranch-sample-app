@@ -6,14 +6,12 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        
-        echo 'build from feature branch.'
-        
+        echo 'build from feature branch.
       }
     }
     stage('for the feature branch') {
       //when {
-          branch "feature-*"
+         // branch "feature-*"
         //}
       steps {
         sh cat README.md
