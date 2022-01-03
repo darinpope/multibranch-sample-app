@@ -6,7 +6,12 @@ pipeline {
   stages {
     stage('Build') {
       steps {
+        sh '''
+        
+        echo 'testing webhooks'
         echo 'build multibranch pipeline here.'
+        
+        '''
       }
     }
   }
