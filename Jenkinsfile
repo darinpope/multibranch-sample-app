@@ -14,7 +14,9 @@ pipeline {
          branch "feature-*"
        }
       steps {
-        echo 'hello'
+        sh '''
+          cat README.md
+        '''
       }
     }
     stage('for the PR') {
