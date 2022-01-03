@@ -19,7 +19,7 @@ pipeline {
           branch "feature-*"
         }
       steps {
-        sh 'cat README.md'
+        sh 'hello'
       }
     }
     stage('for the PR') {
