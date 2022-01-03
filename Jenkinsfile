@@ -14,6 +14,23 @@ pipeline {
         //'''
       }
     }
+    stage('for the feature branch') {
+      steps {
+        when {
+          branch "feature-*"
+        }
+      }
+    }
+    stage('for the PR') {
+      steps {
+        //sh '''
+        when {
+          branch "PR-*"
+        }
+        
+        //'''
+      }
+    }
   }
   post {
     always {
