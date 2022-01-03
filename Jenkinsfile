@@ -27,6 +27,7 @@ pipeline {
         when {
           branch "PR-*"
         }
+        echo ' this runs for the PR branch'
         
         //'''
       }
