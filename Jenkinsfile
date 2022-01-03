@@ -6,13 +6,13 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        echo 'build from feature branch.
+        echo 'build from feature branch.'
       }
     }
     stage('for the feature branch') {
-      //when {
-         // branch "feature-*"
-        //}
+      when {
+         branch "feature-*"
+       }
       steps {
         echo 'hello'
       }
