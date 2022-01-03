@@ -6,20 +6,17 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        //sh '''
         
-        echo 'testing webhooks'
         echo 'build from feature branch.'
         
-        //'''
       }
     }
     stage('for the feature branch') {
-      when {
+      //when {
           branch "feature-*"
-        }
+        //}
       steps {
-        echo 'hello'
+        sh cat README.md
       }
     }
     stage('for the PR') {
