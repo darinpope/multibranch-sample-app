@@ -8,6 +8,7 @@ pipeline {
       steps {
         echo "Hello $GIT_BRANCH"
         echo "New"
+        echo "There is a bug"
       }
     }
   }
