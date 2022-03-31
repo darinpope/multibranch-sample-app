@@ -1,21 +1,17 @@
 pipeline {
-  agent {label 'linux'}
+  agent {label 'ubuntu_slave'}
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
   stages {
-    stage('Build') {
+    stage('Hello') {
+      when { changeRequest() }
       steps {
-        sh './gradlew clean check --no-daemon'
+        echo "name of git branch $GIT_BRANCH"
+        echo "This is $CHANGE_ID"
+        echo "this is $CHANGE_BRANCH"
+        echo "There is $CHANGE_TARGET"
       }
-    }
-  }
-  post {
-    always {
-        junit(
-          allowEmptyResults: true, 
-          testResults: '**/build/test-results/test/*.xml'
-        )
     }
   }
 }
