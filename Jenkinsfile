@@ -1,12 +1,32 @@
 pipeline {
-  agent {label 'linux'}
+  agent any
   options {
-    buildDiscarder(logRotator(numToKeepStr: '5'))
+    buildDiscarder(logRotator(numToKeepStr: '1'))
   }
   stages {
     stage('Build') {
       steps {
-        sh './gradlew clean check --no-daemon'
+        echo 'build from feature branch.'
+      }
+    }
+    stage('for the feature branch') {
+      when {
+         branch "feature-*"
+       }
+      steps {
+        echo 'its in feature branch'     
+      }
+    }
+    stage('for the PR') {
+      when {
+          branch "PR-*"
+        }
+      steps {
+        //sh '''
+        
+        echo ' this runs for the PR branch'
+        
+        //'''
       }
     }
   }
