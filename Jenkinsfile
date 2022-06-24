@@ -10,5 +10,14 @@ pipeline {
         echo "hello by JCasC from develop branch"
       }
     }
+    stage('for the PR') {
+      when {
+        branch 'PR-*'
+      }
+      steps {
+        echo 'this only runs for the PRs'
+      }
+    }
+
   }
 }
