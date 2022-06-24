@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('Hello') {
       steps {
-        echo "hello JCasC"
+        echo "hello by JCasC"
       }
     }
   }
