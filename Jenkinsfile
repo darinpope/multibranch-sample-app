@@ -1,21 +1,11 @@
 pipeline {
-  agent {label 'linux'}
-  options {
-    buildDiscarder(logRotator(numToKeepStr: '5'))
-  }
+  agent {label 'master'}
+
   stages {
     stage('Build') {
       steps {
-        sh './gradlew clean check --no-daemon'
+        sh 'Hello'
       }
-    }
-  }
-  post {
-    always {
-        junit(
-          allowEmptyResults: true, 
-          testResults: '**/build/test-results/test/*.xml'
-        )
     }
   }
 }
