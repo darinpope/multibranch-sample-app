@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('Hello') {
       steps {
-        echo "hello"
+        echo "Initial hello "
       }
     }
     stage('cat README') {
