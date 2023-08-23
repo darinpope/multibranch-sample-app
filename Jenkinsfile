@@ -19,8 +19,8 @@ pipeline {
                   cat README.md
                 '''
               }
-            }
-            stage('for the PR') {
+          }
+          stage('for the PR') {
               when {
                 branch 'PR-*'
               }
