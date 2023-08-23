@@ -10,7 +10,7 @@ pipeline {
         echo "hello"
       }
     }
-            stage('for the fix branch') {
+          stage('for the fix branch') {
               when {
                 branch "fix-*"
               }
@@ -27,6 +27,6 @@ pipeline {
               steps {
                 echo 'this only runs for the PRs'
               }
-            }
+          }
   }
 }
